@@ -30,6 +30,13 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'haml-rails'
 
+gem 'to_words'
+
+gem 'factory_girl_rails'
+
+gem 'bootsy'
+
 group :development, :test do
   gem 'rspec-rails'
+  gem 'byebug'
 end

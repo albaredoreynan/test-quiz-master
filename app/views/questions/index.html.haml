@@ -1,12 +1,17 @@
 .container
-  %h1 Choose a question!
-
-  .well
-    %ul
-      - @questions.each do |question|
-        %li
-          = link_to question.question, question
-          %span.small
-            (#{link_to "edit", edit_question_path(question)})
-
-  = link_to "Add a new question", new_question_path
+	.panel.panel-info
+		.panel-heading
+			%h4 Choose A Question
+			.pull-right.push-40px-up
+				= link_to "Add a new question", new_question_path, class: 'btn btn-default'
+		%ul.list-group
+			- ctr = 1
+			- @questions.each do |question|
+				%li.list-group-item
+					%span.label.label-info
+						= ctr
+					%span &nbsp;&nbsp;
+					%span
+						= link_to question.question.html_safe, question
+					= link_to "<icon class='glyphicon-pencil'></icon>".html_safe, edit_question_path(question), title:'Edit'
+				- ctr = ctr + 1

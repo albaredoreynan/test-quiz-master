@@ -1,11 +1,10 @@
 .container
-  %h1 Question time...
-
-  .well
-    %p= @question.question
-
-    = form_for :answer, url: answer_question_path(@question) do |f|
-      .form-group
-        = f.text_field :answer, class: 'form-control'
-
-      = f.submit "Submit answer", class: 'btn btn-default'
+	.panel.panel-warning
+		.panel-heading
+			%h3 Question Time...
+		.panel-body
+			%p= @question.question.html_safe
+			= form_for :answer, url: answer_question_path(@question) do |f|
+				.form-group
+					= f.text_field :answer, class: 'form-control'
+				= f.submit "Submit answer", class: 'btn btn-default'
