@@ -1,11 +1,11 @@
 .container
-	- pnl = panel_color(@result)
-	%div{ class: "#{pnl} panel" }
+	- color = panel_color(@result)
+	%div{ class: "panel-#{color} panel" }
 		.panel-heading
 			= message(@result)
 		.panel-body
 			%h5
-				%span.label.label-info Correct Answer :
+				%span{ class: "label label-#{color}"} Correct Answer : 
 				= @question.answer
 			.pull-right		
 				= link_to "Return to Questions List", root_path, class: 'btn btn-default'

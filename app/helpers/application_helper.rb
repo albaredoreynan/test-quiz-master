@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def panel_color(val)
-		val ? 'panel-success' : 'panel-danger'
+		val ? 'success' : 'danger'
 	end
 
 	def message(val)
